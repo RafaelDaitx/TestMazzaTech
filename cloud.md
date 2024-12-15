@@ -1,3 +1,5 @@
+# TestMazzaTech
+
 Thinking about our deployment on AWS, we have to know how much we will pay for it, as this will have a major impact on the final cost. Reading about AWS in “US-EAST-1” we can estimate approximately the price we will have, in summary,
 
 * With a load of 10,000 page loads per minute, considering 60 minutes/hour, 24 hours/day and 30 days/month, this results in approximately 432 million requests per month.
