@@ -37,3 +37,8 @@ else Cache Miss
 end
 Gateway --> Client : HTTP Response
 @enduml
+
+
+
+Go to
+ [Techonologies](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/technologies.md) ,

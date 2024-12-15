@@ -85,3 +85,9 @@ jobs:
       - run: sam build --use-container
       - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
 	  
+
+
+
+
+Go to 
+ [Kubernetes](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/kubernetes.md)

@@ -27,3 +27,8 @@ Using Spring Boot Starter Dependencies, you can add specific resources to the pr
 		<artifactId>spring-boot-starter-data-redis</artifactId>
 		<version>3.1.5</version>
 	</dependency>
+
+
+
+Go to 
+ [Project](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/project.md)

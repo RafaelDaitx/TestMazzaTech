@@ -31,3 +31,11 @@ spec:
         - containerPort: 8080
 
 The benefits of deployments are the Reollouts and Roolbacks tha facilitate the gradual deployment (Rolling out) of new versions of applications, as well rolling back to previous versions in the event problem. Also, it can identify deployment fail ain automatically provision a new Pod.
+
+
+
+
+
+
+Go to 
+ [Testing](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/tests.md)

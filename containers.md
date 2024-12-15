@@ -28,3 +28,10 @@ To run the container, use the following command:
 --name my-container: Assigns a name to the container for easier management.
 name-of-image: Refers to the image we just built.
 We can access (in our own machine) accessing http://localhost:3000 to validate our application. 
+
+
+
+
+
+Go to 
+ [Cloud](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/cloud.md)
