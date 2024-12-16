@@ -58,7 +58,7 @@ Steps:<br>
  * Evaluate the performance degradation under load.<br>
 <br><br>
  
- <p>Future Testing Plans</p><br>
+ <b><p>Future Testing Plans</p></b>
 
 This is our future testing plan, trying to cover our entire application. We can implement a philosophy that every task must have a test to pass after that.<br>
 Test interdependencies between microservices once additional services are added to the architecture.<br>
