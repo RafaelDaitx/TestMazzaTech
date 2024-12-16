@@ -21,29 +21,30 @@ In our flow, the request will check our application’s cache (this improves per
 
 *<b>Personal note:</b> it was a little bit difficult to learn how the following code works and how to create it. I developed this code for the Dataflow. Made on https://www.plantuml.com/.
 
+```yaml
 @startuml
-actor Client </br>
-participant Gateway as "API Gateway"</br>
-participant Cache as "Cache System"</br>
-participant K8S as "Kubernetes"</br>
-participant API as "API Service"</br>
-database DB as "Database"</br>
+actor Client 
+participant Gateway as "API Gateway"
+participant Cache as "Cache System"
+participant K8S as "Kubernetes"
+participant API as "API Service"
+database DB as "Database"
 
-Client -> Gateway : HTTP Request</br>
-Gateway -> Cache : Check Cache</br>
-alt Cache Hit</br>
-    Cache --> Gateway : Cached Response</br>
-else Cache Miss</br>
-    Gateway -> K8S : Forward to Kubernetes Service</br>
-    K8S -> API : Route to API Pod</br>
-    API -> DB : Query/Save Data</br>
-    DB --> API : Return Data/Confirmation</br>
-    API -> Cache : Update Cache</br>
-    API --> Gateway : Response</br>
-end</br>
-Gateway --> Client : HTTP Response</br>
-@enduml</br>
-
+Client -> Gateway : HTTP Request
+Gateway -> Cache : Check Cache
+alt Cache Hit
+    Cache --> Gateway : Cached Response
+else Cache Miss
+    Gateway -> K8S : Forward to Kubernetes Service
+    K8S -> API : Route to API Pod
+    API -> DB : Query/Save Data
+    DB --> API : Return Data/Confirmation
+    API -> Cache : Update Cache
+    API --> Gateway : Response
+end
+Gateway --> Client : HTTP Response
+@enduml
+```
 <br>
 
 Go to
