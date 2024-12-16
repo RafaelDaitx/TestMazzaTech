@@ -35,7 +35,7 @@ This figure reflects the estimated cost of processing and transferring requests 
 To make our lives easier, we will use AWS with Github Actions. To set it up, we have to go to AWS Management Console panel and search for IAM. Then, go to Users and create a new one, giving it a name. You need to edit the IAM Role's trust policy to reduce the scope of access to just your repository. Go back to the list of IAM Roles and select the role you created, so click on Trust Relationship, and ti must be similar with it:
 
 ```yaml
-{<br>
+{
   "Version": "2012-10-17",
   "Statement": [
     {

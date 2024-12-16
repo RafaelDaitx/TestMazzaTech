@@ -17,15 +17,18 @@ Tools:
 
 Small example<br>
 Test Data Persistence<br>
-@Test<br>
-void testSaveData() {<br>
-    DataEntity data = new DataEntity("example", "test");<br>
-    when(dataRepository.save(data)).thenReturn(data);<br>
-<br>
-    DataEntity result = dataService.save(data);<br>
-    assertEquals(data.getName(), result.getName());<br>
-    verify(dataRepository, times(1)).save(data);<br>
-}<br>
+
+```yaml
+@Test
+void testSaveData() {
+    DataEntity data = new DataEntity("example", "test");
+    when(dataRepository.save(data)).thenReturn(data);
+
+    DataEntity result = dataService.save(data);
+    assertEquals(data.getName(), result.getName());
+    verify(dataRepository, times(1)).save(data);
+}
+```
 <br>
 Scope:
 Integration tests validate the interactions between multiple components or services, ensuring the system behaves correctly as a whole.
