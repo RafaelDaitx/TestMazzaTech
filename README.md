@@ -40,7 +40,7 @@ The goal of this project is to design a microservice that adheres to modern best
 
 ## 🛠️ **Technologies Used**  
 - **Languages**: Java / Nodejs
-- **Database**: PostgreSQL / Redis  
+- **Database**: PostgreSQL / AWS
 - **Containerization**: Docker  
 - **Orchestration**: Kubernetes  
 - **CI/CD**: GitHub Actions  
