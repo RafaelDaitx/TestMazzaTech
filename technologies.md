@@ -7,7 +7,8 @@ If we have Login, we can construct it using OAuth 2.0. It is an authorization pr
 
 Database: We will use Postgres to control the data and for more efficiency.<br>
 We also use AWS as a cloud system, because of its easy maintenance and excellent service online.<br>
-Routing and Messaging: we can use RabbitMQ to control our queue, ensuring and having a strategy for eventual errors. RabbitMQ is a powerful tool which ensures that all data will be delivered in an efficient way. Our messages are published on an exchange that controls them and routes the messages received on the server to one or more queues.<br>
+Routing and Messaging: we can use RabbitMQ to control our queue, ensuring and having a strategy for eventual errors. RabbitMQ is a powerful tool which ensures that all data will be delivered in an efficient way. Our messages are published on an exchange that controls them and routes the messages received on the server to one or more queues.
+
 We can use a Direct Exchange, sending the message with specific key (Routing Key).<br>
 Resilence4j: a strategy to implement our circuit Breaker, in order to avoid overloading of API, and in status of “Open”, we can controls if an unexpected error occurs, allowing us to forward this message (request) to a waiting queue. 
 
