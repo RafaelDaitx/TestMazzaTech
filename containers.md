@@ -1,11 +1,11 @@
 # Containers
 
 To test and deploy our application, we will use Docker. Docker simplifies the process of packaging and running our application in a consistent environment. Below, we outline the steps to create and use a Docker container for our project.
- <br>
+ 
 First, we will create a Dockerfile with the following instructions:
 
 ```java
-FROM openjdk:17-jdk-slim<br>
+FROM openjdk:17-jdk-slim
 ARG JAR_FILE=cambio-service/target.jar
 RUN bash -c 'touch /app.jar'
 COPY ${JAR_FILE} app.jar 
@@ -23,24 +23,24 @@ We will save this Dockerfile in the root directory of the project (not as a YAML
 
 “docker build -t name-of-image .””
 
-This command creates an image with the name defined in the -t flag. The . at the end indicates the build context, which is the current directory.<br>
-To verify that the image was created successfully, you can run the next command (this command lists all the images available on your system):<br>
+This command creates an image with the name defined in the -t flag. The . at the end indicates the build context, which is the current directory.
+To verify that the image was created successfully, you can run the next command (this command lists all the images available on your system):
 “docker images”
 
-To run the container, use the following command:<br>
-“docker run -p 3000:3000 --name my-container name-of-image”<br>
-<br>
+To run the container, use the following command:
+“docker run -p 3000:3000 --name my-container name-of-image”
 
+</br>
 -p 3000:3000: Maps port 8080 on the host to port 3000 inside the container. Adjust the port as per your application's configuration.
 --name my-app-container: Assigns a custom name to the container for easier management.
 my-app-image: Refers to the image we built earlier.
-<br><br>
+</br></br>
 
 Notes and Alternatives
 
 * Other Base Images: You can use alternative base images for different technologies, such as node:20-slim for Node.js applications.
 * Cloud Deployment: For production deployment, consider using container orchestration tools like Kubernetes for scalability and fault tolerance.
 
-We can access (in our own machine) accessing http://localhost:3000 to validate our application. <br>
+We can access (in our own machine) accessing http://localhost:3000 to validate our application. </br>
 Go to 
  [Cloud](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/cloud.md).
