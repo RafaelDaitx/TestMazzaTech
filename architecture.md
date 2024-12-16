@@ -57,18 +57,21 @@ The Gateway serves as a single gateway to the system, ensuring security (authent
 Gateway → Kubernetes
 
 The Gateway redirects the request to Kubernetes, which is responsible for locating the right microservice pod to handle the request.
+
 Here, Kubernetes performs load balancing, ensuring that the request is distributed efficiently to the available microservice instances (pods).
 Kubernetes → API
 
 After determining the correct pod, the request is sent to the microservice (API).
-The API Service performs validations and executes the necessary business logic.
-Depending on the operation, the service may need to access the persistence layer (database) or consult the caching system.
+ * The API Service performs validations and executes the necessary business logic.
+ * Depending on the operation, the service may need to access the persistence layer (database) or consult the caching system.
+
 API → Database (or Cache)
 
 Cache Miss case (not found in the cache):
-The service queries the database directly to retrieve or store information. After obtaining the data, the system updates the cache to handle future requests more quickly.
+ * The service queries the database directly to retrieve or store information. After obtaining the data, the system updates the cache to handle future requests more quickly.
+
 Cache Hit case (found in the cache):
-The service directly retrieves the data from the cache, avoiding the need to query the database, which reduces response time and the load on the system.
+ * The service directly retrieves the data from the cache, avoiding the need to query the database, which reduces response time and the load on the system.
 Database (or Cache) → API → Gateway → Client
 
 The processed data is returned from the API to the Gateway, which sends the final response to the client.
