@@ -1,6 +1,7 @@
 # Kubernetes
 
 Kubernetes is an open source container orchestration platform designed to automate the deployment, scaling and management of containerized applications. It is widely used in modern microservices-based architectures, bringing several advantages to application and infrastructure management. Some advantages of using Kubernetes is:
+
 Automated Container Management: it reduces the complexity of container management by allowing you to automate tasks such as scaling, load balancing and restarting containers in the event of failures
 Scalability made easy: it automatically adjusts the number of container replicas based on demand, ensuring high availability
 High Availability: it guarantees resilience by distributing containers across different nodes in the cluster and automatically restarting those that fail.

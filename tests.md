@@ -3,6 +3,7 @@
 Our goal is to achieve at least 80% test coverage for critical paths.
 
 To our strategy, we have to create Unit Tests, focusing on individual components in isolation. The primary components to test include:<br>
+
 <b>Input Validation:</b> test the data (POST) endpoint for various valid and invalid payload (ex. Missing fields, incorrect data types)<br>
 <b>Ensure the microservice returns the expected HTTP status codes and messages</b><br>
 <b>Ensure the repository layer interacts with the database correctly</b><br>
@@ -32,8 +33,10 @@ void testSaveData() {
 <br>
 Scope:
 Integration tests validate the interactions between multiple components or services, ensuring the system behaves correctly as a whole.
+
 <br>
 What to Test:
+
  * API Gateway:<br>
  * Ensure it routes requests to the correct microservice.<br>
  * Database Integration: Verify end-to-end data flow (e.g., saving and retrieving data).<br>
@@ -61,10 +64,11 @@ Steps:<br>
  <b><p>Future Testing Plans</p></b>
 
 This is our future testing plan, trying to cover our entire application. We can implement a philosophy that every task must have a test to pass after that.<br>
-Test interdependencies between microservices once additional services are added to the architecture.<br>
-Performance Optimization (for identify specific points who we need to improve)<br>
-Introduce chaos testing to evaluate resilience during unexpected failures (e.g., network interruptions).
-SQL injection.<br>
-Unauthorized access to endpoints.<br>
+
+* Test interdependencies between microservices once additional services are added to the architecture.<br>
+* Performance Optimization (for identify specific points who we need to improve)<br>
+* Introduce chaos testing to evaluate resilience during unexpected failures (e.g., network interruptions).
+* SQL injection.<br>
+* Unauthorized access to endpoints.<br>
 
 
