@@ -65,8 +65,8 @@ After determining the correct pod, the request is sent to the microservice (API)
  * The API Service performs validations and executes the necessary business logic.
  * Depending on the operation, the service may need to access the persistence layer (database) or consult the caching system.
 
-API → Database (or Cache)
 
+API → Database (or Cache)
 Cache Miss case (not found in the cache):
  * The service queries the database directly to retrieve or store information. After obtaining the data, the system updates the cache to handle future requests more quickly.
 
