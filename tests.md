@@ -4,11 +4,11 @@ Our goal is to achieve at least 80% test coverage for critical paths.
 
 To our strategy, we have to create Unit Tests, focusing on individual components in isolation. The primary components to test include:<br>
 
-<b>Input Validation:</b> test the data (POST) endpoint for various valid and invalid payload (ex. Missing fields, incorrect data types)<br>
-<b>Ensure the microservice returns the expected HTTP status codes and messages</b><br>
-<b>Ensure the repository layer interacts with the database correctly</b><br>
-<b>Business logic must be working perfectly.</b><br>
-Things related to security must be <b>100%</b> tested and working very well. it's non-negotiable<br>
+ * <b>Input Validation:</b> test the data (POST) endpoint for various valid and invalid payload (ex. Missing fields, incorrect data types)<br>
+ * <b>Ensure the microservice returns the expected HTTP status codes and messages</b><br>
+ * <b>Ensure the repository layer interacts with the database correctly</b><br>
+ * <b>Business logic must be working perfectly.</b><br>
+ * Things related to security must be <b>100%</b> tested and working very well. it's non-negotiable<br>
 
 Tools:
  * JUnit (Java)<br>
@@ -16,10 +16,9 @@ Tools:
  * Testcontainers: Spins up real Docker containers for databases or other services during tests.<br>
  * Spring Boot Test: To simulate HTTP requests and response<br>
 
-Small example<br>
-Test Data Persistence<br>
+Example: Test Data Persistence<br>
 
-```yaml
+```java
 @Test
 void testSaveData() {
     DataEntity data = new DataEntity("example", "test");
@@ -28,11 +27,12 @@ void testSaveData() {
     DataEntity result = dataService.save(data);
     assertEquals(data.getName(), result.getName());
     verify(dataRepository, times(1)).save(data);
+    verify(dataService, times(1)).save(data);
 }
 ```
 <br>
 Scope:
-Integration tests validate the interactions between multiple components or services, ensuring the system behaves correctly as a whole.
+ * Integration tests validate the interactions between multiple components or services, ensuring the system behaves correctly as a whole.
 
 <br>
 What to Test:
@@ -42,8 +42,8 @@ What to Test:
  * Database Integration: Verify end-to-end data flow (e.g., saving and retrieving data).<br>
  * Service Discovery: Confirm that the microservice can register with and query the Service Discovery component.<br>
 
-We want testing our performance with high level of requisitions. We have to ensure a high data of our clients <br>making requests direct to our service. Our tests validate that the microservice meets the 500ms response time SLA under load.<br>
-
+<p>Performance Testing</p>
+We want testing our performance with high level of requisitions. We have to ensure a high data of our clients <br>making requests direct to our service. Our tests validate that the microservice meets the 500ms response.<br>
 
 Plan: Simulate millions of requests over time to evaluate:<br>
  * API response time<br>

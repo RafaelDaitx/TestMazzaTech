@@ -30,11 +30,33 @@ This figure reflects the estimated cost of processing and transferring requests 
 | **Object Storage**  | Amazon S3                    | $0.023/GB for 1TB of data.                       |
 
 
+<b>*The actual cost may vary based on unexpected usage or changes in AWS tariffs.<b>
 
 
-To make our lives easier, we will use AWS with Github Actions. To set it up, we have to go to AWS Management Console panel and search for IAM. Then, go to Users and create a new one, giving it a name. You need to edit the IAM Role's trust policy to reduce the scope of access to just your repository. Go back to the list of IAM Roles and select the role you created, so click on Trust Relationship, and ti must be similar with it:
+<h1>Setting Up AWS with GitHub Actions</h1>
+To make our lives easier, we will use AWS with GitHub Actions. Follow the steps below to set it up:
 
-```yaml
+ 1- Search for IAM:
+
+ * In the AWS Management Console, use the search bar to type IAM and select IAM (Identity and Access Management).
+ 
+ 2 - Create a New User:
+ * In the side menu, click Users.
+ * Click Add user.
+ * Give the user a name and select Programmatic access to generate access credentials.
+
+ 3 - Create a New IAM Role:
+ * In the IAM navigation panel, click on Roles.
+ * Click Create role.
+ * Select Web identity as the trust type and choose the GitHub Actions OIDC provider.
+ 
+ 4- Edit the Trust Policy:
+ * After creating the role, go back to the list of IAM Roles.
+ * Select the newly created role and click on Trust Relationship.
+ * Click Edit trust relationship.
+ * Paste the trust policy below, replacing [aws-account-id], [org-name], and [repo-name] with your correct information (it will be similar to the JSON below):
+
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -57,6 +79,12 @@ To make our lives easier, we will use AWS with Github Actions. To set it up, we 
 }
 ```
 
+5 - Finalize the Setup:
+
+ * Click Update Trust Policy to save the changes.
+
+
+
 The important part you must add is<br>
 "StringLike": {<br>
   "token.actions.githubusercontent.com:sub": "repo:[nome-da-org]/[nome-do-repo]:*"<br>
@@ -67,7 +95,10 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least
 <br>
 
 
-But we have to configure it in our github in the same way.  In Github, go to Settings, after that “Secrets and Variables”, and Actions. Then click on New Repository Secret and adding the following information:
+But we have to configure it in our github in the same way. In Github, go to:
+* Settings
+* “Secrets and Variables”
+* and Actions. Then click on New Repository Secret and adding the following information:
 
 ```yaml
 on:

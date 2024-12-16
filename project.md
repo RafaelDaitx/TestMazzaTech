@@ -1,13 +1,15 @@
 # Project
 
-We starting creating our project and organizing it into files, for example:
+Our project is organized into specific folders, each designed to separate concerns and improve maintainability:
 
-config: general settings of our API (like for CORS)<br>
-Controller: our controller classes that will guard our endpoints<br>
-vos: folder to have our Json Mapping classes, so we can customize them as we want our received Json.<br>
-exceptions: we customize our exceptions according to the code that the server return to us, so we leave friendly message for the user seeing.<br>
-repository: we make the database connection class, where we can create customized queries for the database.<br>
-mapper: folder where we organize the classes to perform the necessary between the database layer (our repository) and our service<br>
+config: Contains general configuration files, such as enabling CORS, defining global settings, or setting up dependencies.
+controller: Hosts the controller classes responsible for handling HTTP requests and defining our API endpoints. They delegate the business logic to service classes.
+vos: This folder contains classes used for JSON mapping. These classes help customize how we process incoming or outgoing JSON in our API.
+exceptions: Includes custom exception classes that provide meaningful and user-friendly error messages when exceptions occur. This improves the user experience and debugging process.
+repository: Contains classes responsible for database interactions, such as CRUD operations or custom database queries. These classes are typically interfaces extending JPA repositories.
+mapper: This folder contains mapper classes that translate entities from the database into application objects (DTOs) and vice-versa. This ensures a clear separation between the data layer and business logic.
+
+<br>
 
 
 <img src="/images/folders.png">
