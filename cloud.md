@@ -1,4 +1,4 @@
-# TestMazzaTech
+# Cloud
 
 Thinking about our deployment on AWS, we have to know how much we will pay for it, as this will have a major impact on the final cost. Reading about AWS in “US-EAST-1” we can estimate approximately the price we will have, in summary,
 
@@ -18,14 +18,16 @@ This figure reflects the estimated cost of processing and transferring requests 
 
 <p>Cost Analysis for Cloud Environments</p>
 
-Base Setup (AWS)
-Component	              Service	                       Cost Estimate
-      API Layer        |	AWS Fargate (ECS)	        |     $46/month for 2 vCPU, 4GB RAM (100% uptime).
-    Database Layer     | 	Amazon RDS (PostgreSQL)	    |     $90/month for db.t3.medium (Multi-AZ).
-    Caching Layer      | 	Amazon ElastiCache (Redis)	|     $40/month for a small node.
-    Service Discovery  |	AWS App Mesh	            |     $7.20/month (for 10 active services).
-    Load Balancing     |	AWS ALB	                    |     $20/month (minimal traffic).
-    Object Storage     |	Amazon S3                   |     $0.023/GB for 1TB of data.
+## Base Setup (AWS)
+
+| Component           | Service                       | Cost Estimate                                      |
+|---------------------|-------------------------------|---------------------------------------------------|
+| **API Layer**       | AWS Fargate (ECS)            | $46/month for 2 vCPU, 4GB RAM (100% uptime).     |
+| **Database Layer**  | Amazon RDS (PostgreSQL)      | $90/month for db.t3.medium (Multi-AZ).           |
+| **Caching Layer**   | Amazon ElastiCache (Redis)   | $40/month for a small node.                      |
+| **Service Discovery**| AWS App Mesh                | $7.20/month (for 10 active services).            |
+| **Load Balancing**  | AWS ALB                      | $20/month (minimal traffic).                     |
+| **Object Storage**  | Amazon S3                    | $0.023/GB for 1TB of data.                       |
 
 
 
@@ -90,4 +92,4 @@ jobs:
 
 
 Go to 
- [Kubernetes](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/kubernetes.md)
+ [Kubernetes](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/kubernetes.md).

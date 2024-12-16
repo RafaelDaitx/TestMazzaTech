@@ -1,17 +1,16 @@
-# TestMazzaTech
+# Containers
 
-Thinking about testing and deploying the application into production, I decided to use Docker for this step. Docker allows us to test our server and ensure everything is running correctly. We will upload a container of our application. First, we will create a Dockerfile with the following instructions:
+Thinking about testing and deploying the application into production, I decided to use Docker for this step. Docker allows us to test our server and ensure everything is running correctly. We will upload a container of our application. 
+First, we will create a Dockerfile with the following instructions:
+
 FROM openjdk:17-jdk-slim
-This image provides a minimal Java environment for running our application. You can also use other base images for different technologies, like Node.js (node:20-slim).
 ARG JAR_FILE=cambio-service/target/*.jar
 This defines a build-time variable to specify the path to the JAR file that will be included in the container.
-RUN bash -c 'touch /app.jar'
-This ensures the /app.jar file exists. It is not strictly necessary and can usually be omitted unless you have a specific reason for it.
-COPY ${JAR_FILE} app.jar
-This copies the JAR file from the build context into the container and names it app.jar.
+RUN bash -c 'touch /app.jar' -> This ensures the /app.jar file exists. It is not strictly necessary and can usually be omitted unless you have a specific reason for it.
+COPY ${JAR_FILE} app.jar -> This copies the JAR file from the build context into the container and names it app.jar.
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
-This specifies the command that runs when the container starts. In this case, it starts the Java application using the JAR file.
 
+This specifies the command that runs when the container starts. In this case, it starts the Java application using the JAR file. This image provides a minimal Java environment for running our application. You can also use other base images for different technologies, like Node.js (node:20-slim).
 
 We will save this Dockerfile in the root directory of the project (not as a YAML file). With the Dockerfile in place, we can build the image by running the following command:
 
@@ -34,4 +33,4 @@ We can access (in our own machine) accessing http://localhost:3000 to validate o
 
 
 Go to 
- [Cloud](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/cloud.md)
+ [Cloud](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/cloud.md).

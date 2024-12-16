@@ -1,4 +1,4 @@
-# TestMazzaTech
+# Project
 
 We starting creating our project and organizing it into files, for example:
 config: general settings of our API (like for CORS)
@@ -19,4 +19,4 @@ Its completely important to think about the future. Our database needs to be eas
 
 
 Go to 
- [Containers](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/containers.md)
+ [Containers](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/containers.md).

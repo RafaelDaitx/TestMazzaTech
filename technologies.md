@@ -1,4 +1,4 @@
-# TestMazzaTech
+# Technologies
 
 We could create this with many languages (like Csharp, Nodejs or Kotlin), but for this example, I decided to use Java + SpringBoot. Spring has a big community with great solutions (despite the verbosity of Java, which can make a little bit confusing for some programmers at first). Well, let's put our plan in practice.
 We will create our project and organize it in the following way.
@@ -31,4 +31,4 @@ Using Spring Boot Starter Dependencies, you can add specific resources to the pr
 
 
 Go to 
- [Project](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/project.md)
+ [Project](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/project.md).

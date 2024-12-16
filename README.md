@@ -6,4 +6,4 @@ The main goal is to be as simple as possible, to develop all the features we nee
 
 
 Start with
- [Architecture](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/architecture.md) ,
+ [Architecture](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/architecture.md).

@@ -1,4 +1,4 @@
-# TestMazzaTech
+# Kubernetes
 
 Kubernetes is an open source container orchestration platform designed to automate the deployment, scaling and management of containerized applications. It is widely used in modern microservices-based architectures, bringing several advantages to application and infrastructure management. Some advantages of using Kubernetes is:
 Automated Container Management: it reduces the complexity of container management by allowing you to automate tasks such as scaling, load balancing and restarting containers in the event of failures
@@ -10,25 +10,26 @@ We  can create a YAML file for kubernetes using the following command:
 
 This command will create the deployment in the kubernetes cluster according to the specifications in the file. Next is an example of a YAML file to configure deployment:
 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: example-deployment
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: example
-  template:
-    metadata:
-      labels:
-        app: example
-    spec:
-      containers:
-      - name: example-container
-        image: example-image
-        ports:
-        - containerPort: 8080
+apiVersion: apps/v1</br>
+kind: Deployment</br>
+metadata:</br>
+  name: example-deployment</br>
+spec:</br>
+  replicas: 3</br>
+  selector:</br>
+    matchLabels:</br>
+      app: example</br>
+  template:</br>
+    metadata:</br>
+        app: example</br>
+      labels:</br>
+        app: example</br>
+    spec:</br>
+      containers:</br>
+      - name: example-container</br>
+        image: example-image</br>
+        ports:</br>
+        - containerPort: 8080</br>
 
 The benefits of deployments are the Reollouts and Roolbacks tha facilitate the gradual deployment (Rolling out) of new versions of applications, as well rolling back to previous versions in the event problem. Also, it can identify deployment fail ain automatically provision a new Pod.
 
@@ -38,4 +39,4 @@ The benefits of deployments are the Reollouts and Roolbacks tha facilitate the g
 
 
 Go to 
- [Testing](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/tests.md)
+ [Testing](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/tests.md).
