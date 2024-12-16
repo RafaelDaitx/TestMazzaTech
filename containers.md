@@ -41,6 +41,6 @@ Notes and Alternatives
 * Other Base Images: You can use alternative base images for different technologies, such as node:20-slim for Node.js applications.
 * Cloud Deployment: For production deployment, consider using container orchestration tools like Kubernetes for scalability and fault tolerance.
 
-We can access (in our own machine) accessing http://localhost:3000 to validate our application. </br>
+We can access (in our own machine) accessing http://localhost:3000 to validate our application. </br></br>
 Go to 
  [Cloud](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/cloud.md).
