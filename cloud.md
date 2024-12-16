@@ -34,62 +34,62 @@ This figure reflects the estimated cost of processing and transferring requests 
 
 To make our lives easier, we will use AWS with Github Actions. To set it up, we have to go to AWS Management Console panel and search for IAM. Then, go to Users and create a new one, giving it a name. You need to edit the IAM Role's trust policy to reduce the scope of access to just your repository. Go back to the list of IAM Roles and select the role you created, so click on Trust Relationship, and ti must be similar with it:
 
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Federated": "arn:aws:iam::[aws-account-id]:oidc-provider/token.actions.githubusercontent.com"
-      },
-      "Action": "sts:AssumeRoleWithWebIdentity",
-      "Condition": {
-        "StringEquals": {
-          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
-        },
-        "StringLike": {
-          "token.actions.githubusercontent.com:sub": "repo:[nome-da-org]/[nome-do-repo]:*"
-        }
-      }
-    }
-  ]
+{<br>
+  "Version": "2012-10-17",<br>
+  "Statement": [<br>
+    {<br>
+      "Effect": "Allow",<br>
+      "Principal": {<br>
+        "Federated": "arn:aws:iam::[aws-account-id]:oidc-provider/token.actions.githubusercontent.com"<br>
+      },<br>
+      "Action": "sts:AssumeRoleWithWebIdentity",<br>
+      "Condition": {<br>
+        "StringEquals": {<br>
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"<br>
+        },<br>
+        "StringLike": {<br>
+          "token.actions.githubusercontent.com:sub": "repo:[nome-da-org]/[nome-do-repo]:*"<br>
+        }<br>
+      }<br>
+    }<br>
+  ]<br>
+}<br>
+
+
+The important part you must add is<br>
+"StringLike": {<br>
+  "token.actions.githubusercontent.com:sub": "repo:[nome-da-org]/[nome-do-repo]:*"<br>
 }
-
-
-The important part you must add is
-"StringLike": {
-  "token.actions.githubusercontent.com:sub": "repo:[nome-da-org]/[nome-do-repo]:*"
-}
-
+<br>
 *For some extras infos: 
 https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege
-
+<br>
 
 
 But we have to configure it in our github in the same way.  In Github, go to Settings, after that “Secrets and Variables”, and Actions. Then click on New Repository Secret and adding the following information:
 
-on:
-  push:
-    branches:
-      - main
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
-      - uses: aws-actions/setup-sam@v2
-      - uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-      - run: sam build --use-container
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
+on:<br>
+  push:<br>
+    branches:<br>
+      - main<br>
+jobs:<br>
+  deploy:<br>
+    runs-on: ubuntu-latest<br>
+    steps:<br>
+      - uses: actions/checkout@v3<br>
+      - uses: actions/setup-python@v3<br>
+      - uses: aws-actions/setup-sam@v2<br>
+      - uses: aws-actions/configure-aws-credentials@v1<br>
+        with:<br>
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}<br>
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}<br>
+          aws-region: us-east-1<br>
+      - run: sam build --use-container<br>
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset<br>
 	  
 
 
-
+<br><br>
 
 Go to 
  [Kubernetes](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/kubernetes.md).

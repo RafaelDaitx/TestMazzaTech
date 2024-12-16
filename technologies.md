@@ -12,7 +12,7 @@ Resilence4j: a strategy to implement our circuit Breaker, in order to avoid over
 
 <img src="/images/resilence.png">
 
-Cache: we will use Redis. It is a Store In-memory, it stores data in RAM,which provides extremely fast read and write times (in the order of milliseconds). It results in reducing the latency of PIs that need to respond quickly.
+Cache: we will use <br>Redis</br>. It is a Store In-memory, it stores data in RAM,which provides extremely fast read and write times (in the order of milliseconds). It results in reducing the latency of PIs that need to respond quickly.
 
 Using Spring Boot Starter Dependencies, you can add specific resources to the project (such as web, security or database). Below is an example using Redis as a dependency or any other dependency (even for Postgres)
 
@@ -29,6 +29,6 @@ Using Spring Boot Starter Dependencies, you can add specific resources to the pr
 	</dependency>
 
 
-
+<br><br>
 Go to 
  [Project](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/project.md).

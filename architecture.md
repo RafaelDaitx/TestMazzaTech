@@ -9,7 +9,7 @@ First of all, we have to see how our microservice will work.
 Looking to the image below, we have the client-side making a request to our API, and this API will request a data (or send) to our Gateway (it will allows us, protect our API Address and the we can scale application in the best way)
 
 <img src="/images/flow.png">
-Made on Miro.com
+Made on Miro.com<br><br><br>
 
 
 
@@ -44,7 +44,7 @@ end</br>
 Gateway --> Client : HTTP Response</br>
 @enduml</br>
 
-
+<br>
 
 Go to
- [Techonologies](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/technologies.md).
+ [Technologies](https://github.com/RafaelDaitx/TestMazzaTech/blob/main/technologies.md).
