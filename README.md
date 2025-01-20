@@ -1,4 +1,4 @@
-# TestMazzaTech
+
 
 # 🌐 **Scalable Microservice Design Documentation**  
 Welcome to the comprehensive design documentation for a scalable, maintainable, and efficient **Microservice Architecture**! 🚀  
